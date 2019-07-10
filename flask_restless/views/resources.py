@@ -686,7 +686,7 @@ class API(APIBase):
         if 'type' not in data:
             detail = 'Missing "type" element'
             return error_response(400, detail=detail)
-        if 'id' not in data:
+        if 'id' not in data and 'CustomID' not in data:
             detail = 'Missing resource ID'
             return error_response(400, detail=detail)
         type_ = data.pop('type')
