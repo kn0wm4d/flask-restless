@@ -691,10 +691,6 @@ class API(APIBase):
         if 'id' not in data:
             if 'CustomID' in data:
                 id_ = data.pop('CustomID')
-            else:
-                detail = 'Missing resource ID'
-                return error_response(400, detail=detail)
-                
         type_ = data.pop('type')
         # Check that the requested type matches the expected collection
         # name for this model.
